@@ -2,20 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package Actividad_1;
+package com.mycompany.actividad_1;
 
 import java.util.Scanner;
 
-public class Mavenproject1 {
+
+public class Actividad_1 {
 
     public static void main(String[] args) {
-        //Declaracion de las variables que guardaran
+           //Declaracion de las variables que guardaran
         // los datos de las edades de cada persona
         double EdJuan, EdAna, EdAlberto, EdMadre;
         
         //Entramos en consola la edad de Juan y se almacena
         // en la variable EdJuan
         Scanner entradaJuan = new Scanner (System.in);
+        System.out.println ("Edad de Juan:");
         EdJuan = entradaJuan.nextDouble();
         
         //Se calcula a partir de la edad de Juan las edades 
@@ -26,10 +28,10 @@ public class Mavenproject1 {
         
         //Se imprime en consola
         System.out.println ("La edad de cada uno es:");
-        System.out.println ("Madre:" +EdMadre);
-        System.out.println ("Juan:" + EdJuan);
-        System.out.println ("Ana:" + EdAna);
-        System.out.println ("Alberto:" + EdAlberto);
+        System.out.println ("Madre:" +EdMadre +" años");
+        System.out.println ("Juan:" + EdJuan +" años");
+        System.out.println ("Ana:" + EdAna +" años");
+        System.out.println ("Alberto:" + EdAlberto +" años");
         
         
         
