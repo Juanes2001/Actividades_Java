@@ -4,39 +4,30 @@
 
 package com.mycompany.ejerciciocap3_no_21;
 
-import java.util.Scanner;
 
 public class EjercicioCap3_No_21 {
 
     public static void main(String[] args) {
-        //Definicion de las variables a usar
-        //Lados del triangulo
-        double  ladoTriag1 , ladoTriag2, ladoTriag3;
+        //Definicion de las variables de la clase que contendra la informacion a usar:
+        //Creamos el objeto correspondiente al triángulo el cual contendra los atributos del mismo y 
+        // los metodos correspondientes
+        Triangulo tr = new Triangulo();
         
+        // Usamos el metodo ladosTriangulo el cual se encargara de leer en consola los datos 
+        //de los lados del triangulo
+        tr.ladosTriangulo();
+       
         //Creamos tambien las variables que contendran los resultados del problema
         double per, sper, area;
         
-        //Preguntamos su valor en consola
-        Scanner entrada = new Scanner (System.in);
-        System.out.print("Primer lado del triangulo: ");
-        ladoTriag1 = entrada.nextDouble();
-        System.out.print("\n");
+        // En cada variable colocamos los metodos que hallan los parametros pedidos.
         
-        System.out.print("Segundo lado del triangulo: ");
-        ladoTriag2 = entrada.nextDouble();
-        System.out.print("\n");
+        per = tr.Perimetro();
         
-        System.out.print("Tercer lado del triangulo: ");
-        ladoTriag3 = entrada.nextDouble();
-        System.out.print("\n");
+        sper = tr.Semiperimetro();
         
-        
-        //Hallamos el perimetro, el semiperimetro y el area con el valor que se
-        //entrego de los lados del triangulo
-        per = ladoTriag1 + ladoTriag2 + ladoTriag3;
-        sper = (ladoTriag1 + ladoTriag2 + ladoTriag3)/2;
-        area = Math.sqrt(sper*(sper-ladoTriag1) *(sper-ladoTriag2)*(sper-ladoTriag3) );
-        
+        area = tr.Area();
+       
         // Mostramos los resultados en consola
         
         System.out.println("El perimetro del triángulo es: " + per);
