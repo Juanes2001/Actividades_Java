@@ -11,6 +11,12 @@ package com.mycompany.ejerciciocap3_no19;
 public class EjercicioCap3_No19 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        EjercicioC3N19 display = new EjercicioC3N19();
+        
+        display.setVisible(true);
+        display.setLocationRelativeTo(null);
+        
+        
     }
 }
