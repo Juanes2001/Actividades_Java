@@ -105,10 +105,10 @@ public class EjercicioC3N18 extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Nombres)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Codigo_Empleado))
-                        .addGap(65, 65, 65)
+                            .addComponent(Codigo_Empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
                         .addComponent(Boton_calcular)
-                        .addGap(18, 18, 18)
+                        .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(Codigo)
@@ -121,9 +121,9 @@ public class EjercicioC3N18 extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(240, 240, 240))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(26, 26, 26)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(436, 436, 436))))
@@ -200,40 +200,34 @@ public class EjercicioC3N18 extends javax.swing.JFrame {
 
     private void Boton_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_calcularActionPerformed
         
-        // Guardamos en textoCodigo el codigo de empleado, es un codigo que no se usara asi que 
-        // puede tratarse como texto
-        String textoCodigo = Codigo_Empleado.getText();
-        Codigo.setText(textoCodigo);
+        // Guardamos en el atributo de la clase Code el codigo del empleafo.
+        Code cod = new Code();
+        cod.codeDefine(Codigo_Empleado.getText());
+        Codigo.setText(cod.codigo);
         
         
-        //Guardamos en textoNombre el nombre del empleado digitado, es un dato que no se usara asi}
-        // que se trata como un texto
-        String textoNombre = Nombres.getText();
-        nombres.setText(textoNombre);
+        
+        //Guardamos en el atributo de la clase name el nombre del empleado
+        name nom = new name();
+        nom.nameDefine(Nombres.getText());
+        nombres.setText(nom.nombre);
         
         
-        //Tranformamos las horas trabajadas en formato texto a formato numero tipo doble 
-        String strNumHoras = Numero_horas_trabajadas.getText();
-        double numHoras = Double.parseDouble(strNumHoras);
+        //De la clase Trabajo, usamos la funcion parametrosTrabajo() para definir
+        // los parametros, pero primero pasamos cada uno de ellos a un valor float
+        Trabajo tr = new Trabajo ();
+        tr.parametrosTrabajo(Float.parseFloat(Numero_horas_trabajadas.getText()),
+                
+                             Float.parseFloat(Valor_horas_trabajada.getText()),
+                             
+                             Float.parseFloat(porcentaje_retencion.getText()));
+        // Esta funcion entrega un array donde estan el salario bruto y neto respectivamente
+        float[] salarios = tr.salB_salN();
         
-        // Tambien extraemos la informacion sobre el precio de la hora a la semana y la retencion
-        // en la fuente
-        String strValHoras = Valor_horas_trabajada.getText();
-        double valHoras = Double.parseDouble(strValHoras);
-        
-        String strRetFuente = porcentaje_retencion.getText();
-        double retFuente = Double.parseDouble(strRetFuente);
-        
-        // Calculamos el salario bruto y el neto con la informacion extraida
-        double salBruto = numHoras * valHoras ;
-        double salNet = salBruto * (1 - ( retFuente / 100 ) ) ;
         
         // Mostramos el salario bruto y neto en pantalla, transformando estos datos primero en texto
-        String strSalBruto = "" + salBruto;
-        String strSalNet = "" + salNet;
-        
-        Salario_bruto.setText(strSalBruto);
-        Salario_neto.setText(strSalNet);
+        Salario_bruto.setText("" + salarios[0]);
+        Salario_neto.setText("" + salarios[1]);
                        
                 
     }//GEN-LAST:event_Boton_calcularActionPerformed

@@ -1,3 +1,5 @@
+package com.mycompany.ejerciciocap3_no18;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -9,14 +11,10 @@
  */
 public class Code {
     
-    int codigo;
+    String codigo;
     // Con esta funcion definimos el valor de codigo 
-    public void codeDefine (int code){
+    public void codeDefine (String code){
         codigo = code;
-    }
-    // con esta funcion retornamos el valor de codigo
-    public int returnCode (){
-        return codigo;
     }
     
     

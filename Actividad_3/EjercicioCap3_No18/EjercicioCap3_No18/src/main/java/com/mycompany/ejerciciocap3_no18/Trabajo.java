@@ -1,3 +1,5 @@
+package com.mycompany.ejerciciocap3_no18;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -25,12 +27,10 @@ public class Trabajo {
         float salBruto = numHoras * valHoraTrabajada * (1 - porcentRet / 100);
         float salNeto  = numHoras * valHoraTrabajada;
         
-        float[] array  = [salBruto,salNeto];
-        
-        return {salBruto,salNeto};
-        
-        
-        
+        float[] array  = new float[2];
+        array[0] = salBruto;
+        array[1] = salNeto;
+        return array;
     }
     
     
