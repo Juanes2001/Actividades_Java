@@ -12,6 +12,5 @@ public class EjercicioCap3_No18 {
         
         display.setVisible(true);
         display.setLocationRelativeTo(null);
-        
     }
 }
