@@ -3,17 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package com.mycompany.ejerciciocap3_no18;
+package com.mycompany.ejemplocap3_no18;
 
 /**
  *
  * @author juane
  */
-public class EjercicioCap3_no18 {
+public class EjemploCap3_No18 {
 
-     public static void main(String[] args) {
-        
-        EjercicioC3N18 display = new EjercicioC3N18();
+    public static void main(String[] args) {
+        EJC3N18 display = new EJC3N18();
         
         display.setVisible(true);
         display.setLocationRelativeTo(null);
